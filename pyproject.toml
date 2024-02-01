@@ -1,0 +1,29 @@
+# pyproject.toml
+
+[build-system]
+requires      = ["setuptools>=69.0.3", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mous3"
+version = "0.1.0"
+description = "Allows head or tail of a file on s3 without downloading the whole file"
+readme = "README.md"
+authors = [{ name = "Spencer Smith", email = "spencer@auriasllc.com" }]
+license = { file = "LICENSE" }
+classifiers = [
+    "License :: OSI Approved :: The Unlicense (Unlicense)",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+]
+keywords = ["aws", "s3", "head", "tail"]
+dependencies = [
+    "boto3"
+]
+requires-python = ">=3.6"
+
+[project.urls]
+Homepage = "https://github.com/spencersmith/mous3"
+
+[project.scripts]
+mous3 = "mous3.__main__:main"
