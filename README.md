@@ -1,6 +1,6 @@
 
 # mous3
-A python utility that allows you to print a number of bites from either the beginning or end of an object stored on AWS S3 without downloading the entire file.
+A python utility that allows you to print a number of bytes from either the beginning or end of an object stored on AWS S3 without downloading the entire file.
 
 ## Features
 -  **AWS Profile Support**: Optionally specify an AWS profile to use for accessing the S3 bucket, making it easier to work with multiple AWS accounts or configurations.
