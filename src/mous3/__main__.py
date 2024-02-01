@@ -3,10 +3,11 @@
 import boto3
 import argparse
 
-def print_last_bytes(direction, bucket_name, key, bytes_to_download=1000, aws_profile=None):
+def print_bytes(direction, bucket_name, key, bytes_to_download=1000, aws_profile=None):
     """
-    Print the last 'bytes_to_download' bytes of an object from an S3 bucket using a specified AWS profile.
+    Print the first or last 'bytes_to_download' bytes of an object from an S3 bucket using a specified AWS profile.
 
+    :param direction: The direction to read from the object. Can be "head" or "tail".
     :param bucket_name: Name of the S3 bucket.
     :param key: Key of the object.
     :param bytes_to_download: Number of bytes to download from the end of the object.
@@ -60,7 +61,7 @@ def main():
     args = parser.parse_args()
 
     # Call the function with provided arguments and exit with return code
-    raise SystemExit(print_last_bytes(args.direction, args.bucket_name, args.key, args.bytes, args.profile))
+    raise SystemExit(print_bytes(args.direction, args.bucket_name, args.key, args.bytes, args.profile))
 
 if __name__ == '__main__':
     main()
