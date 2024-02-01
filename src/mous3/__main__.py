@@ -38,8 +38,14 @@ def print_last_bytes(direction, bucket_name, key, bytes_to_download=1000, aws_pr
         
         # Print the content
         print(content)
+
+        # Return 0 to indicate success
+        return 0
     except Exception as e:
         print(f"Failed to download object: {e}")
+
+        # Return 1 to indicate failure
+        return 1
 
 def main():
     # Create an argument parser
@@ -53,8 +59,8 @@ def main():
     # Parse command line arguments
     args = parser.parse_args()
 
-    # Call the function with provided arguments
-    print_last_bytes(args.direction, args.bucket_name, args.key, args.bytes, args.profile)
+    # Call the function with provided arguments and exit with return code
+    raise SystemExit(print_last_bytes(args.direction, args.bucket_name, args.key, args.bytes, args.profile))
 
 if __name__ == '__main__':
     main()

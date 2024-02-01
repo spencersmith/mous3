@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "mous3"
-version = "0.1.0"
+version = "0.1.1"
 description = "Allows head or tail of a file on s3 without downloading the whole file"
 readme = "README.md"
 authors = [{ name = "Spencer Smith", email = "spencer@auriasllc.com" }]
